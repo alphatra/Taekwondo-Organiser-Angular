@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100vh;
+  margin: 0px;
+}
+
+:host {
+  text-align: center;
+}
+
+
+nz-layout {
+  margin-bottom: 0px;
+}
+
+nz-layout:last-child {
+  margin: 0;
+}
+
+#right_panel {
+  background: #5200FF;
+  min-height: 100vh;
+}
+
+#left_panel {
+  background: url(../assets/Background.svg)no-repeat center center fixed ;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  min-height: 100vh;
+}
+
+#logo {
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  width: 70%;
+  padding-top: 10%
+}
+.login_panel{
+  margin: auto;
+  width: 60%;
+  padding-top: 10%
+  
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}

@@ -1,21 +1,55 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<!-- NG-ZORRO -->
+<nz-layout>
+  <nz-content>
+    <div nz-row nzType="flex" nzJustify="start">
+      <div nz-col nzSpan="15">
+        <div id="left_panel"></div>
+      </div>
+      <div nz-col nzSpan="9">
+        <div id="right_panel">
+          <img src="../assets/TAEKWONDO ORGANISER LOGO.svg" alt="logo" id="logo">
+          <section class="login_panel">
+            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your Username!">
+                  <nz-input-group nzPrefixIcon="user">
+                    <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your Password!">
+                  <nz-input-group nzPrefixIcon="lock">
+                    <input type="password" nz-input formControlName="password" placeholder="Password" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your E-mail!">
+                  <nz-input-group nzPrefixIcon="mail">
+                    <input type="text" nz-input formControlName="email" placeholder="E-mail" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control>
+                  <label nz-checkbox formControlName="remember">
+                    <span style="color:white">Remember this computer</span>
+                    <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                    <a class="login-form-forgot" class="login-form-forgot">New E-mail</a>
+                    <br />
+                    <br />
+                    <button nz-button class="login-form-button" [nzType]="'default'" nz-popconfirm
+                      nzTitle="Are you sure? You have only 3 attempts a day, and you can only enter 3 times a day."
+                      (nzOnConfirm)="confirm()" (nzOnCancel)="cancel()" nzOkText="enter" nzCancelText="cancel"
+                      nzPlacement="bottom" nz-button>Log in</button>
+                  </label>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
